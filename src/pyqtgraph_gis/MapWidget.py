@@ -3,7 +3,7 @@ import requests
 from PyQt6 import QtCore, QtWidgets
 from math import log
 
-from utils import (
+from .utils import (
     latlon_to_web_mercator,
     vectorized_wgs84_to_wm,
     vectorized_wm_to_wgs84,
@@ -14,7 +14,7 @@ from utils import (
     LatLonAxis
 )
 
-
+__all__ = ['MapWidget']
 class MapWidget(pg.PlotWidget):
     # Signal that emits (latitude, longitude)
     sigMapClicked = QtCore.pyqtSignal(float, float)
