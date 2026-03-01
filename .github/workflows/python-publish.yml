@@ -59,11 +59,11 @@ jobs:
       # url: https://pypi.org/project/YOURPROJECT/${{ github.event.release.name }}
 
     steps:
-      - name: Retrieve release distributions
-        uses: actions/download-artifact@v4
-        with:
-          name: release-dists
-          path: dist/
+#      - name: Retrieve release distributions
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: release-dists
+#          path: dist/
 
       - name: Publish release distributions to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
