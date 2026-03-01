@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyqtgraph-gis"
+version = "0.0.1"
+authors = [
+    { name = "Ole Meiforth", email = "pggis@protonmail.com" },
+]
+description = "Tile-based GIS widget for pyqtgraph. Seamlessly overlay scientific data on real-world maps with multi-threaded rendering and WGS84 support."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["pyqtgraph", "gis", "mapping", "tiles", "wgs84", "python", "qt"]
+
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering"
+]
+
+
+dependencies = [
+    "requests >= 2.32.5",
+    "pyqtgraph >= 0.14.0",
+    "PyQt6 >= 6.10.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest >= 9.0.2",
+    "pytest-qt >= 4.5.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/olemeif/pyqtgraph-gis"
+"Bug Tracker" = "https://github.com/olemeif/pyqtgraph-gis/issues"
+"Documentation" = "https://github.com/olemeif/pyqtgraph-gis/wiki"
+
+[tool.setuptools]
+packages = { find = { where = ["src"] } }
