@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyqtgraph-gis"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
     { name = "Ole Meiforth", email = "olemeif@protonmail.com" },
 ]
@@ -30,6 +30,12 @@ classifiers = [
 
 
 dependencies = [
+    "requests >= 2.32.5",
+    "pyqtgraph >= 0.14.0",
+    "PyQt6 >= 6.10.2",
+]
+
+install_requires = [
     "requests >= 2.32.5",
     "pyqtgraph >= 0.14.0",
     "PyQt6 >= 6.10.2",
