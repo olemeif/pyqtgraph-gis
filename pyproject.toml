@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "pyqtgraph-gis"
 version = "0.0.1"
 authors = [
-    { name = "Ole Meiforth", email = "pggis@protonmail.com" },
+    { name = "Ole Meiforth", email = "olemeif@protonmail.com" },
 ]
 description = "Tile-based GIS widget for pyqtgraph. Seamlessly overlay scientific data on real-world maps with multi-threaded rendering and WGS84 support."
 readme = "README.md"
