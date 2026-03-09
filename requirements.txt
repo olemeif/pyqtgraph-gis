@@ -1,3 +1,2 @@
 pyqtgraph
-pyqt6
 requests

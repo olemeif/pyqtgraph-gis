@@ -3,6 +3,8 @@ import requests
 from PyQt6 import QtCore, QtWidgets
 from math import log
 
+from numpy import ndarray
+
 from .utils import (
     latlon_to_web_mercator,
     vectorized_wgs84_to_wm,
@@ -15,13 +17,22 @@ from .utils import (
 )
 
 __all__ = ['MapWidget']
+
+
 class MapWidget(pg.PlotWidget):
     # Signal that emits (latitude, longitude)
     sigMapClicked = QtCore.pyqtSignal(float, float)
     sigMouseMoved = QtCore.pyqtSignal(float, float)
 
-    def __init__(self, tile_server_url, headers=None, parent=None, attribution_text=""):
-        super().__init__(parent)
+    def __init__(
+            self,
+            tile_server_url: str,
+            headers: str | None = None,
+            parent: QtCore.QObject | None = None,
+            attribution_text: str | None = None,
+            **kwargs
+    ):
+        super().__init__(parent, **kwargs)
         self.tile_cache = {}  # Stores NumPy arrays of tile images
         self.current_tiles = {}  # Stores { (z, x, y): ImageItem }
         self.pending_tiles = set()  # Track tiles currently being loaded
@@ -214,7 +225,7 @@ class MapWidget(pg.PlotWidget):
             tile_item = self.current_tiles.pop(tile_key)
             self.removeItem(tile_item)
 
-    def plot_lines(self, lats, lons, *args, **kwargs):
+    def plot_lines(self, lats: list, lons: list, *args, **kwargs):
         """
         Plots lines or curves using WGS84 coordinates.
         Returns the pg.PlotDataItem.
@@ -222,7 +233,7 @@ class MapWidget(pg.PlotWidget):
         x, y = vectorized_wgs84_to_wm(lats, lons)
         return self.plot(x, y, *args, **kwargs)
 
-    def add_scatter(self, lats, lons, **kwargs):
+    def add_scatter(self, lats: list, lons: list, **kwargs):
         """
         Adds a scatter plot using WGS84 coordinates.
         Returns the pg.ScatterPlotItem.
@@ -232,7 +243,8 @@ class MapWidget(pg.PlotWidget):
         self.addItem(scatter)
         return scatter
 
-    def add_2d_array(self, image_data, min_lat, min_lon, max_lat, max_lon, **kwargs):
+    def add_2d_array(self, image_data: ndarray, min_lat: float, min_lon: float, max_lat: float, max_lon: float,
+                     **kwargs):
         """
         Overlays 2D array data (like a heatmap) given its WGS84 bounding box.
         Returns the pg.ImageItem.

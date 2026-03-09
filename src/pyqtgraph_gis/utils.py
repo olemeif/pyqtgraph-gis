@@ -121,8 +121,10 @@ class TileWorker(QtCore.QRunnable):
             self.signals.result.emit(tile_key, img_array_flipped)
         except requests.exceptions.RequestException as e:
             error_msg = f"Error fetching tile {url}"
-            if hasattr(e, "response") and e.response is not None and e.response.status_code == 403:
-                error_msg += "\n Likely cause: Tile Usage Policy violation"
+            if hasattr(e, "response") and e.response is not None and e.response.status_code:
+                error_msg += f" (HTTP {e.response.status_code})"
+                if e.response.status_code == 403:
+                    error_msg += "\n Likely cause: Tile Usage Policy violation"
             self.signals.error.emit((tile_key, error_msg))
         except Exception as e:
             self.signals.error.emit((tile_key, f"Unexpected error: {str(e)}"))
