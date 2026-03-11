@@ -95,4 +95,4 @@ app.exec()
 ```
 
 The result should look like this:
-![Result of the Heatmap Example](https://github.com/user-attachments/assets/807390f5-3199-41ff-b5f5-2a46ad7dffda)
+![Result of the Heatmap Example](../..//assets/images/heatmap.png)
