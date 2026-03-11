@@ -1,4 +1,9 @@
-# PyQtGraph GIS Widget
+---
+hide:
+    - navigation
+---
+
+# Home
 
 [![PyPi](https://img.shields.io/pypi/v/pyqtgraph-gis.svg)](https://pypi.org/project/pyqtgraph-gis/)
 [![pyqtgraph](https://img.shields.io/badge/github-pyqtgraph-blue?logo=github)](https://github.com/pyqtgraph/pyqtgraph)
@@ -33,6 +38,6 @@ pip install pyqtgraph-gis
 
 ## Documentation
 
-You can find a [quickstart guide](https://olemeif.github.io/pyqtgraph-gis/getting_started/), [API reference](https://olemeif.github.io/pyqtgraph-gis/reference/),
-[code examples](https://olemeif.github.io/pyqtgraph-gis/getting_started/examples/) and more in
-the [documentation](https://olemeif.github.io/pyqtgraph-gis/).
+In this documentation you can find 
+a [quickstart guide](./getting_started/index.md), [API reference](./reference/index.md),
+[code examples](./getting_started/examples/index.md) and more.

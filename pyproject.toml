@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyqtgraph-gis"
-version = "0.0.4"
+version = "0.0.5"
 authors = [
     { name = "Ole Meiforth", email = "olemeif@protonmail.com" },
 ]
@@ -32,6 +32,7 @@ classifiers = [
 dependencies = [
     "requests >= 2.32.0",
     "pyqtgraph >= 0.14.0",
+    "pyqt6 >= 6.7.0",
 ]
 
 [project.optional-dependencies]
@@ -43,7 +44,7 @@ dev = [
 [project.urls]
 "Homepage" = "https://github.com/olemeif/pyqtgraph-gis"
 "Bug Tracker" = "https://github.com/olemeif/pyqtgraph-gis/issues"
-"Documentation" = "https://github.com/olemeif/pyqtgraph-gis/wiki"
+"Documentation" = "https://olemeif.github.io/pyqtgraph-gis/"
 
 [tool.setuptools]
 packages = { find = { where = ["src"] } }

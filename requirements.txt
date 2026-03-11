@@ -1,2 +1,4 @@
 pyqtgraph
+pyqt6
 requests
+mkdocs-material
