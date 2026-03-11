@@ -1,6 +1,8 @@
+# Getting started
+
 Follow these steps to get your mapping environment running from scratch.
 
-![Image showing the result of this Setup Guide - A PyQt6 Window with a PyQtGraph Plot Widget as a Map](https://github.com/user-attachments/assets/507a4bb2-d949-45b0-95fd-b55db21417bc)
+![Image showing the result of this Setup Guide - A PyQt6 Window with a PyQtGraph Plot Widget as a Map](../assets/images/MapWidget.png)
 
 ## Create a Virtual Environment
 It is highly recommended to use a virtual environment to avoid version conflicts between PyQt6 and other Qt-based tools.
@@ -11,7 +13,7 @@ python -m venv .venv
 
 # Activate it
 # On Windows:
-.venv\Scripts\activate
+.venv/Scripts/activate
 # On Mac/Linux:
 source .venv/bin/activate
 ```
@@ -57,7 +59,7 @@ if __name__ == "__main__":
 
     # Add a marker (e.g., North Cape)
     # Coordinates are [Latitude], [Longitude]
-    north_cape = widget.add_scatter([71.1725], [25.784444], symbol="o", size=10, brush="r")
+    north_cape = widget.scatter([71.1725], [25.784444], symbol="o", size=10, brush="r")
 
     layout.addWidget(widget, 0, 0)
     w.show()

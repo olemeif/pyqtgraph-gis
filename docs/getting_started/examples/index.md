@@ -10,7 +10,7 @@ these examples is to explain how to use PyQtGraph-GIS and how the syntax works.
 In [this example](./2d-array-heatmap.md) we will display the 5G network coverage in Germany as a Heatmap.
 The result will look like this:
 
-![Image showing the result of this example - A PyQt6 Window with a PyQtGraph-GIS MapWidget with a Heatmap Overlay](https://github.com/user-attachments/assets/807390f5-3199-41ff-b5f5-2a46ad7dffda)
+![Image showing the result of this example - A PyQt6 Window with a PyQtGraph-GIS MapWidget with a Heatmap Overlay](../../assets/images/heatmap.png)
 
 ## GPX Viewer
 
@@ -19,4 +19,4 @@ With signals and slots we will link the map and the plots together, so when you 
 
 The result will look like this:
 
-![Image showing the result of this example - A PyQt6 Window with a PyQtGraph-GIS MapWidget on the left and three PyQtGraph PlotWidgets on the right, with a highlighted point on the map corresponding to the hovered point on the plot](https://github.com/user-attachments/assets/53b14ddf-3a5f-45a6-9a61-2a9c753556b7)
+![Image showing the result of this example - A PyQt6 Window with a PyQtGraph-GIS MapWidget on the left and three PyQtGraph PlotWidgets on the right, with a highlighted point on the map corresponding to the hovered point on the plot](../../assets/images/gpx_viewer.png)

@@ -189,7 +189,7 @@ class View(QMainWindow):
 
 ### Plotting the Track and Marker
 
-The `MapWidget` allows you to plot WGS84 (Latitude/Longitude) coordinates directly using `plot_lines`. However, for interactive markers, we need to handle coordinate systems carefully.
+The `MapWidget` allows you to plot WGS84 (Latitude/Longitude) coordinates directly using `plot`. However, for interactive markers, we need to handle coordinate systems carefully.
 
 ```python
     def clear_plots(self):
@@ -206,8 +206,8 @@ The `MapWidget` allows you to plot WGS84 (Latitude/Longitude) coordinates direct
 
         self.coords = (data["lat"], data["lon"])
         self.map_widget.clear()
-        self.map_widget.plot_lines(self.coords[0], self.coords[1], pen=pg.mkPen('b', width=2))
-        self.marker = self.map_widget.add_scatter([self.coords[0][0]], [self.coords[1][0]], brush="r")
+        self.map_widget.plot(self.coords[0], self.coords[1], pen=pg.mkPen('b', width=2))
+        self.marker = self.map_widget.scatter([self.coords[0][0]], [self.coords[1][0]], brush="r")
 
         # Elevation Plot
         self.add_time_plot(data["time"], data["elevation"], "Elevation")
@@ -235,7 +235,7 @@ The other plots will be added by the `add_time_plot` function.
 
 ### WGS84 to Web Mercator
 
-Under the hood, pyqtgraph-gis uses **Web Mercator (WM)** coordinates for performance. While the helper functions like `plot_lines` handle the conversion for you, when you manually update a marker's position via `.setData()`, you must convert the coordinates yourself.
+Under the hood, pyqtgraph-gis uses **Web Mercator (WM)** coordinates for performance. While the helper functions like `plot` handle the conversion for you, when you manually update a marker's position via `.setData()`, you must convert the coordinates yourself.
 
 ```python
     def update_marker(self, idx):
@@ -337,7 +337,7 @@ All done!
 
 You can load a `.gpx` file via the `File` menu in the menu bar. By hovering over a plot in the right side, a marker is shown at the position in the map. The plot legend shows you the values at that marker.
 
-![Result of the App](https://github.com/user-attachments/assets/53b14ddf-3a5f-45a6-9a61-2a9c753556b7)
+![Result of the App](../..//assets/images/gpx_viewer.png)
 
 ## Summary of Key Concepts
 

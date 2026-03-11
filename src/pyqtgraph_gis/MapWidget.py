@@ -225,25 +225,25 @@ class MapWidget(pg.PlotWidget):
             tile_item = self.current_tiles.pop(tile_key)
             self.removeItem(tile_item)
 
-    def plot_lines(self, lats: list, lons: list, *args, **kwargs):
+    def plot(self, lats: list, lons: list, *args, **kwargs):
         """
         Plots lines or curves using WGS84 coordinates.
         Returns the pg.PlotDataItem.
         """
         x, y = vectorized_wgs84_to_wm(lats, lons)
-        return self.plot(x, y, *args, **kwargs)
+        return super().plot(x, y, *args, **kwargs)
 
-    def add_scatter(self, lats: list, lons: list, **kwargs):
+    def scatter(self, lats: list, lons: list, **kwargs):
         """
         Adds a scatter plot using WGS84 coordinates.
         Returns the pg.ScatterPlotItem.
         """
         x, y = vectorized_wgs84_to_wm(lats, lons)
-        scatter = pg.ScatterPlotItem(x=x, y=y, **kwargs)
-        self.addItem(scatter)
-        return scatter
+        scatter_item = pg.ScatterPlotItem(x=x, y=y, **kwargs)
+        self.addItem(scatter_item)
+        return scatter_item
 
-    def add_2d_array(self, image_data: ndarray, min_lat: float, min_lon: float, max_lat: float, max_lon: float,
+    def image(self, image_data: ndarray, min_lat: float, min_lon: float, max_lat: float, max_lon: float,
                      **kwargs):
         """
         Overlays 2D array data (like a heatmap) given its WGS84 bounding box.
