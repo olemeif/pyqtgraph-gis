@@ -1,0 +1,78 @@
+site_name: PyQtGraph-GIS Documentation
+site_url: https://mydomain.org/mysite
+repo_url: https://github.com/olemeif/pyqtgraph-gis
+repo_name: olemeif/pyqtgraph-gis
+edit_uri: edit/main/docs/
+theme:
+  name: material
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  icon:
+    repo: fontawesome/brands/github
+
+  features:
+    #   - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.suggest
+    - search.highlight
+    - search.share
+    - header.autohide
+    - navigation.footer
+    - content.action.edit
+    - content.action.view
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+extra:
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actions:
+      - accept
+      # - manage
+      - reject
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/olemeif/pyqtgraph-gis
+      name: PyQtGraph-GIS on GitHub
+copyright: >
+  Copyright &copy; 2026 Ole Meiforth –
+  <a href="#__consent">Change cookie settings</a>
+plugins:
+  - privacy
+  - search
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
