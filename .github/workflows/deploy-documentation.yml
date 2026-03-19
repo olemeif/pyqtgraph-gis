@@ -24,5 +24,10 @@ jobs:
           path: ~/.cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+      - name: Install MkDocs and Deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
+        run: |
+          pip install mkdocs-material
+          mkdocs gh-deploy --force
