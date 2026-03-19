@@ -24,10 +24,21 @@ jobs:
           path: ~/.cache
           restore-keys: |
             mkdocs-material-
-      - name: Install MkDocs and Deploy
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
+      - name: Install Python dependencies
         run: |
           pip install mkdocs-material
-          mkdocs gh-deploy --force
+          pip install .[recommended,git,imaging]
+
+      - name: Adjust permissions
+        run: |
+          chmod -c -R +rX site/ | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
