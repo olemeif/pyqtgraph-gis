@@ -18,7 +18,7 @@ You can find code examples in the [Documentation](https://olemeif.github.io/pyqt
 
 ## Requirements
 
-- [Python](https://www.python.org/) 3.13 or higher (earlier versions may work but are not tested)
+- [Python](https://www.python.org/) 3.12 or higher (earlier versions may work but are not tested)
 - [PyQt6](https://www.riverbankcomputing.com/software/pyqt/)
 - [PyQtGraph](https://www.pyqtgraph.org/)
 - [Requests](https://requests.readthedocs.io/en/latest/)
