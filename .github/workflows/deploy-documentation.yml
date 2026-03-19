@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure Git Credentials
+        env:
+          GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
@@ -24,21 +26,5 @@ jobs:
           path: ~/.cache
           restore-keys: |
             mkdocs-material-
-      - name: Install Python dependencies
-        run: |
-          pip install mkdocs-material
-          pip install .[recommended,git,imaging]
-
-      - name: Adjust permissions
-        run: |
-          chmod -c -R +rX site/ | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
-
-      - name: Upload to GitHub Pages
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: site
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
