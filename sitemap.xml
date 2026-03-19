@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://olemeif.github.io/pyqtgraph-gis/</loc>
+         <lastmod>2026-03-19</lastmod>
+    </url>
+    <url>
+         <loc>https://olemeif.github.io/pyqtgraph-gis/getting_started/</loc>
+         <lastmod>2026-03-19</lastmod>
+    </url>
+    <url>
+         <loc>https://olemeif.github.io/pyqtgraph-gis/getting_started/examples/</loc>
+         <lastmod>2026-03-19</lastmod>
+    </url>
+    <url>
+         <loc>https://olemeif.github.io/pyqtgraph-gis/getting_started/examples/2d-array-heatmap/</loc>
+         <lastmod>2026-03-19</lastmod>
+    </url>
+    <url>
+         <loc>https://olemeif.github.io/pyqtgraph-gis/getting_started/examples/gpx-viewer/</loc>
+         <lastmod>2026-03-19</lastmod>
+    </url>
+    <url>
+         <loc>https://olemeif.github.io/pyqtgraph-gis/reference/</loc>
+         <lastmod>2026-03-19</lastmod>
+    </url>
+    <url>
+         <loc>https://olemeif.github.io/pyqtgraph-gis/reference/MapWidget/</loc>
+         <lastmod>2026-03-19</lastmod>
+    </url>
+    <url>
+         <loc>https://olemeif.github.io/pyqtgraph-gis/reference/utils/</loc>
+         <lastmod>2026-03-19</lastmod>
+    </url>
+</urlset>
