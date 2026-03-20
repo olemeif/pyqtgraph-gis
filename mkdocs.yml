@@ -3,8 +3,10 @@ site_url: https://olemeif.github.io/pyqtgraph-gis/
 repo_url: https://github.com/olemeif/pyqtgraph-gis
 repo_name: olemeif/pyqtgraph-gis
 edit_uri: edit/main/docs/
+site_description: >-
+  Documentation for the PyQtGraph-GIS library.
+  Setup Guide and Tutorials on how to create Map-Apps with Python and PyQtGraph-GIS.
 theme:
-  name: material
   palette:
 
     # Palette toggle for automatic mode
@@ -29,6 +31,10 @@ theme:
 
   icon:
     repo: fontawesome/brands/github
+
+  font:
+    text: Inter
+    code: JetBrains Mono
 
   features:
     - navigation.instant
@@ -67,6 +73,21 @@ extra:
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+
 copyright: >
   Copyright &copy; 2026 Ole Meiforth –
   <a href="#__consent">Change cookie settings</a>
