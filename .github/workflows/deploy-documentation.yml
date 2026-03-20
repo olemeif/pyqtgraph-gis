@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+      - master
+      - documentation
 permissions:
   contents: read
   pages: write
