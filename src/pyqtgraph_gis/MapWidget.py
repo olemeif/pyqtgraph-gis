@@ -118,7 +118,8 @@ class MapWidget(pg.PlotWidget):
         if tile_key in self.current_tiles:
             return  # Tile is already on the plot
 
-        tile_item = pg.ImageItem(img_array, antialias=True)
+        tile_item = pg.ImageItem(img_array, antialias=True, levels=(0, 255))
+
         wm_x1, wm_y1, wm_x2, wm_y2 = tile_coords_to_web_mercator_bounds(x, y, z)
         tile_item.setRect(QtCore.QRectF(wm_x1, wm_y1, wm_x2 - wm_x1, wm_y2 - wm_y1))
         tile_item.setZValue(-100 - z)  # Deeper Zoom levels on top
