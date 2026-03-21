@@ -110,13 +110,11 @@ class TileWorker(QtCore.QRunnable):
             if qimage.isNull():
                 raise ValueError(f"Failed to load image data from {url}")
 
-            qimage = qimage.convertToFormat(QtGui.QImage.Format.Format_ARGB32_Premultiplied)
+            # Convert to RGBA8888 format
+            qimage = qimage.convertToFormat(QtGui.QImage.Format.Format_RGBA8888)
 
-            # Convert QImage to numpy array
-            # This array is likely in BGRA format, so we need to convert it to RGBA
             img_array = pg.imageToArray(qimage, copy=True)
-            img_array_reordered = img_array[..., [2, 1, 0, 3]]  # Convert BGRA to RGBA
-            img_array_flipped = img_array_reordered[:, ::-1, :]  # Flip image
+            img_array_flipped = img_array[:, ::-1, :]  # Flip vertically to match tile coordinate system
 
             self.signals.result.emit(tile_key, img_array_flipped)
         except requests.exceptions.RequestException as e:
