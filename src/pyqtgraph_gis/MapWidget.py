@@ -232,7 +232,7 @@ class MapWidget(pg.PlotWidget):
         Returns the pg.PlotDataItem.
         """
         x, y = vectorized_wgs84_to_wm(lats, lons)
-        return super().plot(x, y, *args, **kwargs)
+        return self.getPlotItem().plot(x, y, *args, **kwargs)
 
     def scatter(self, lats: list, lons: list, **kwargs):
         """
