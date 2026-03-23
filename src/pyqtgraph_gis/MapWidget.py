@@ -225,13 +225,15 @@ class MapWidget(pg.PlotWidget):
             tile_item = self.current_tiles.pop(tile_key)
             self.removeItem(tile_item)
 
-    def plot(self, lats: list, lons: list, *args, **kwargs):
-        """
-        Plots lines or curves using WGS84 coordinates.
-        Returns the pg.PlotDataItem.
-        """
-        x, y = vectorized_wgs84_to_wm(lats, lons)
-        return super().plot(x, y, *args, **kwargs)
+    def plot(self, lats=None, lons=None, *args, **kwargs):
+        # If lats and lons are provided, convert them
+        if lats is not None and lons is not None:
+            x, y = vectorized_wgs84_to_wm(lats, lons)
+            # Talk directly to the PlotItem to avoid the wrapper logic
+            return self.getPlotItem().plot(x, y, *args, **kwargs)
+
+        # Otherwise, behave like a normal PlotWidget
+        return self.getPlotItem().plot(*args, **kwargs)
 
     def scatter(self, lats: list, lons: list, **kwargs):
         """

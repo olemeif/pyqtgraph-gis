@@ -206,7 +206,7 @@ The `MapWidget` allows you to plot WGS84 (Latitude/Longitude) coordinates direct
 
         self.coords = (data["lat"], data["lon"])
         self.map_widget.clear()
-        self.map_widget.plot(self.coords[0], self.coords[1], pen=pg.mkPen('b', width=2))
+        self.map_widget.plot(lats=self.coords[0], lons=self.coords[1], pen=pg.mkPen('b', width=2))
         self.marker = self.map_widget.scatter([self.coords[0][0]], [self.coords[1][0]], brush="r")
 
         # Elevation Plot

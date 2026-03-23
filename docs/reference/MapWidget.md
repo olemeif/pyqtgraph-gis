@@ -26,9 +26,11 @@ PlotWidget that loads map tiles from a given Tile Provider into the background o
 - `sigMapClicked` ([Signal](https://doc.qt.io/qt-6/signalsandslots.html)): Signal that is emitted when the map is clicked. Emits the latitude and longitude of the clicked point.
 - `sigMouseMoved` ([Signal](https://doc.qt.io/qt-6/signalsandslots.html)): Signal that is emitted when the mouse is moved over the map. Emits the latitude and lomgitude of the mouse position.
 
-## `plot(lats: list, lons: list, *args, **kwargs)`
+## `plot(self, lats=None, lons=None, *args, **kwargs)`
 
 Plots sets of WGS84 latitudes and longitudes to the map as a line. Returns a [pyqtgraph.PlotItem](https://pyqtgraph.readthedocs.io/en/latest/api_reference/graphicsItems/plotitem.html) object.
+
+If `lats` and `lons` are not provided, the method behaves like a normal `pyqtgraph.PlotWidget` with `x` and `y` values provided in `*args` and `**kwargs`.
 
 ### Parameters
 
