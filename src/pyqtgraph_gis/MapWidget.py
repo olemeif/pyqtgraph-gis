@@ -72,7 +72,6 @@ class MapWidget(pg.PlotWidget):
         initial_lat, initial_lon = 48.1351, 11.5820  # Munich
         initial_wm_x, initial_wm_y = latlon_to_web_mercator(initial_lat, initial_lon)
 
-        initial_zoom = 12
         span_wm = 50_000
         self.setXRange(initial_wm_x - span_wm, initial_wm_x + span_wm, padding=0)
         self.setYRange(initial_wm_y - span_wm, initial_wm_y + span_wm, padding=0)
@@ -128,6 +127,8 @@ class MapWidget(pg.PlotWidget):
 
     def update_map_tiles(self):
         view_box = self.getViewBox()
+        view_box.setLimits(xMin=None, xMax=None, yMin=None, yMax=None, minXRange=0, minYRange=0)
+        view_box.suggestPadding(False)
         x_range, y_range = view_box.viewRange()
 
         widget_width_pixels = max(1, self.width())
