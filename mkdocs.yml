@@ -18,6 +18,8 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: light
+      accent: light
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -25,16 +27,17 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: dark
+      accent: dark
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
 
   icon:
+    logo: lucide/map
     repo: fontawesome/brands/github
-
-  font:
-    text: Inter
-    code: JetBrains Mono
+  favicon: assets/logos/favicon.svg
+  font: false
 
   features:
     - navigation.instant
@@ -53,6 +56,8 @@ theme:
     - content.code.select
     - content.code.annotate
     - toc.integrate
+extra_css:
+  - stylesheets/extra.css
 extra:
   consent:
     title: Cookie consent
