@@ -14,7 +14,7 @@ The library could be used to display:
 - Geospatial data in a scientific or GIS application, like weather data, population density, or land use
 - Any other geospatial data that can be represented as points, lines, polygons or raster data
 
-You can find code examples in the [Documentation](https://olemeif.github.io/pyqtgraph-gis/).
+You can find code examples in the [Documentation](https://pyqtgraph-gis.olemeif.de/).
 
 ## Requirements
 
@@ -33,6 +33,6 @@ pip install pyqtgraph-gis
 
 ## Documentation
 
-You can find a [quickstart guide](https://olemeif.github.io/pyqtgraph-gis/getting_started/), [API reference](https://olemeif.github.io/pyqtgraph-gis/reference/),
-[code examples](https://olemeif.github.io/pyqtgraph-gis/getting_started/examples/) and more in
-the [documentation](https://olemeif.github.io/pyqtgraph-gis/).
+You can find a [quickstart guide](https://pyqtgraph-gis.olemeif.de/getting_started/), [API reference](https://pyqtgraph-gis.olemeif.de/reference/),
+[code examples](https://pyqtgraph-gis.olemeif.de/getting_started/examples/) and more in
+the [documentation](https://pyqtgraph-gis.olemeif.de/).

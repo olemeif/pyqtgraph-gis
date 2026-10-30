@@ -20,7 +20,7 @@ The library could be used to display:
 - Geospatial data in a scientific or GIS application, like weather data, population density, or land use
 - Any other geospatial data that can be represented as points, lines, polygons or raster data
 
-You can find code examples in the [Documentation](https://olemeif.github.io/pyqtgraph-gis/).
+You can find code examples in the [Documentation](https://pyqtgraph-gis.olemeif.de/).
 
 ## Requirements
 

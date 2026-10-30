@@ -44,7 +44,7 @@ dev = [
 [project.urls]
 "Homepage" = "https://github.com/olemeif/pyqtgraph-gis"
 "Bug Tracker" = "https://github.com/olemeif/pyqtgraph-gis/issues"
-"Documentation" = "https://olemeif.github.io/pyqtgraph-gis/"
+"Documentation" = "https://pyqtgraph-gis.olemeif.de/"
 
 [tool.setuptools]
 packages = { find = { where = ["src"] } }
